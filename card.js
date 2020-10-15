@@ -18,7 +18,7 @@ export default class Card {
   }
   mount(){
     let container = document.querySelector('.container');
-    container.innerHTML += `<div class="card"><img src="luciano/${this.img}.jpg"/><div>`
+    container.innerHTML += `<div class="card"><img src="luciano/${this.img}.jpg"/></div>`
   }
   turnUp(e){
     let c = e.target;
