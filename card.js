@@ -3,34 +3,18 @@ export default class Card {
     this.img = img;
     this.state = state;
   }
-  initialization(){
-    let cards = document.querySelectorAll('.card');
-    cards.forEach(card=>{
-    card.addEventListener('click',(e)=>{
-      if (this.state == 'Down') {
-        this.turnUp(e)
-      } else {
-        this.turnDown(e)
-      }
-
-  })
-})
-  }
-  mount(){
+  mounting(){
     let container = document.querySelector('.container');
-    container.innerHTML += `<div class="card"><img src="luciano/${this.img}.jpg"/></div>`
+    container.innerHTML += `<div class="card"><img src="luciano/poker.jpg"/></div>`
   }
-  turnUp(e){
-    let c = e.target;
-     c.classList.add('turnUp');
-     c.classList.remove('turnDown');
-    this.state = 'Up'
-  }
-  turnDown(e){
-    let c = e.target;
-      c.classList.add('turnDown');
-       c.classList.remove('turnUp');
+  toToggleTurnUpDown(image){
+    if (this.state == 'Up') {
+      image.src = `./luciano/poker.jpg`
       this.state = 'Down'
+    }else{
+      image.src = `./luciano/${this.img}.jpg`
+      this.state = 'Up'
+    }
   }
   similarity(){
     console.log('are similarity ...')
