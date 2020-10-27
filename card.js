@@ -7,6 +7,7 @@ export default class Card {
     let container = document.querySelector('.container');
     container.innerHTML += `<div class="card"><img src="luciano/poker.jpg"/></div>`
   }
+  
   toToggleTurnUpDown(image){
     if (this.state == 'Up') {
       image.src = `./luciano/poker.jpg`
